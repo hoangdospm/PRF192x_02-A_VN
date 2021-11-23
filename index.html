@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/newsStyle.css">
+    <script src="js/newsScript.js"></script>
+    <title>Gnews - Tin tức thế giới | Project 4 - hoangdhfx11435</title>
+</head>
+
+<body>
+    <header>
+        <!-- Nút để tìm kiếm tin tức và trở về trang tin nổi bật -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li><a id="head-lines" href="#"><b>GNEWS</b></a></li>
+                    <li><a id="search-nav" data-toggle="modal" href="#search-modal"><b>Tìm kiếm tin tức</b> <i
+                                class="glyphicon glyphicon-search"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Chức năng bổ sung -->
+        <div class="container" id="topic">
+            <input type="button" class="btn btn-danger" id="breaking-news" value="breaking-news">
+            <input type="button" class="btn btn-default" value="world">
+            <input type="button" class="btn btn-default" value="nation">
+            <input type="button" class="btn btn-default" value="business">
+            <input type="button" class="btn btn-default" value="technology">
+            <input type="button" class="btn btn-default" value="entertainment">
+            <input type="button" class="btn btn-default" value="sports">
+            <input type="button" class="btn btn-default" value="science">
+            <input type="button" class="btn btn-default" value="health">
+        </div>
+
+        <div class="container" id="total">
+        </div>
+
+        <!-- div chứa nội dung tin tức -->
+        <div class="container" id="newsList">
+        </div>
+
+        <!-- div chứa biểu tượng loading -->
+        <div class="container">
+            <div id="loading">
+            </div>
+        </div>
+        
+
+        <!-- Modal chứa form khi bấm vào biểu tượng tìm kiếm -->
+        <div class="modal fade" id="search-modal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Nội dung modal -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3>Tìm kiếm tin tức</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" id="search-form">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="key-word">Nhập từ khóa</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="key-word">
+                                    <span class="help-block bg-danger" id="kw-noti">Trường bắt buộc! Vùi lòng nhập từ khóa</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="start-date">Từ ngày</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control" id="start-date">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="end-date">đến ngày</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control" id="end-date">
+                                    <span class="help-block bg-danger" id="date-noti">Ngày bắt đầu không lớn hơn ngày kết thúc.</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button class="btn btn-primary" id="search-button">Tìm kiếm</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-dismiss="modal" id="search-cancel">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
